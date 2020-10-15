@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var myLabel: UILabel!
+    var israncid = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,15 @@ class ViewController: UIViewController {
 
     @objc func changePic() {
         
-        print("tapped")
+        if israncid == true {
+            imageView.image = UIImage(named: "lintGuitar")
+            myLabel.text = "Lint"
+            israncid = false
+        } else {
+            imageView.image = UIImage(named: "rancid")
+            myLabel.text = "Rancid"
+            israncid = true
+        }
         
     }
 
